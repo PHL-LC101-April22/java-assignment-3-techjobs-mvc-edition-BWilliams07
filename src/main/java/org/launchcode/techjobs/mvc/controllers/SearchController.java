@@ -31,11 +31,27 @@ import static org.launchcode.techjobs.mvc.controllers.ListController.columnChoic
 
 
  /**
+ package org.launchcode.techjobs.mvc.controllers;
+
+ import org.launchcode.techjobs.mvc.models.Job;
+ import org.launchcode.techjobs.mvc.models.JobData;
+ import org.springframework.stereotype.Controller;
+ import org.springframework.ui.Model;
+ import org.springframework.web.bind.annotation.*;
+
+ import javax.websocket.server.PathParam;
+
+ import java.util.ArrayList;
+
+ import static org.launchcode.techjobs.mvc.controllers.ListController.columnChoices;
+
+
+ /**
  * Created by LaunchCode
  */
 @Controller
 @RequestMapping("search")
-public class SearchController<Job> {
+public class SearchController {
 
     @GetMapping(value = "")
     public String search(Model model) {
@@ -49,7 +65,7 @@ public class SearchController<Job> {
     public String displaySearchResults(Model model,
                                        @RequestParam String searchType,
                                        @RequestParam String searchTerm) {
-        ArrayList<org.launchcode.techjobs.mvc.models.Job> jobs;
+        ArrayList<Job> jobs;
         if (Objects.equals(searchTerm, "all") || Objects.equals(searchTerm, "")){
             jobs = JobData.findAll();
             model.addAttribute("title", "Jobs With All:");
