@@ -1,9 +1,6 @@
 package org.launchcode.techjobs.mvc.controllers;
 
 
-package org.launchcode.techjobs.mvc.controllers;
-
-
 import org.launchcode.techjobs.mvc.models.Job;
 import org.launchcode.techjobs.mvc.models.JobData;
 import org.springframework.stereotype.Controller;
